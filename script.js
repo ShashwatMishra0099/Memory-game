@@ -61,6 +61,9 @@ function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
+    firstCard.classList.add('slide-down');
+    secondCard.classList.add('slide-down');
+
     setTimeout(() => {
         firstCard.style.visibility = 'hidden';
         secondCard.style.visibility = 'hidden';
