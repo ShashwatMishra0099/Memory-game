@@ -52,8 +52,8 @@ body {
 }
 
 .card-image {
-    width: 50px; /* Adjust the width of the image here */
-    height: 50px; /* Adjust the height of the image here */
+    width: 25px; /* Adjust the width of the image here */
+    height: 25px; /* Adjust the height of the image here */
     object-fit: contain; /* Ensure the image is contained within the specified dimensions */
     margin: auto; /* Center the image */
     display: block; /* Make sure the image is treated as a block element for centering */
