@@ -21,8 +21,31 @@ function shuffle(array) {
 // Shuffle card data
 shuffle(duplicateCardsData);
 
-// Assign images to cards
-const cards = document.querySelectorAll('.cards');
-cards.forEach((card, index) => {
-    card.style.backgroundImage = `url(${duplicateCardsData[index].imgSrc})`;
+// Get the memory game container
+const memoryGame = document.querySelector('.memory-game');
+
+// Create card elements and append to memory game container
+duplicateCardsData.forEach(cardData => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    
+    const cardInner = document.createElement('div');
+    cardInner.classList.add('card-inner');
+    
+    const cardFront = document.createElement('div');
+    cardFront.classList.add('card-front');
+    
+    const cardBack = document.createElement('div');
+    cardBack.classList.add('card-back');
+    cardBack.style.backgroundImage = `url(${cardData.imgSrc})`;
+    
+    cardInner.appendChild(cardFront);
+    cardInner.appendChild(cardBack);
+    card.appendChild(cardInner);
+    memoryGame.appendChild(card);
+
+    // Add click event listener for flipping the card
+    card.addEventListener('click', () => {
+        card.classList.toggle('is-flipped');
+    });
 });
