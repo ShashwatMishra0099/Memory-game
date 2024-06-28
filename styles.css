@@ -8,24 +8,31 @@ body {
 }
 
 .memory-game {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    max-width: 400px;
+    margin: auto;
 }
 
 .cards {
-    width: calc(25% - 20px);
+    width: 100px;
     height: 150px;
     background-color: #3498db;
     border-radius: 8px;
     cursor: pointer;
+    background-size: cover;
+    background-position: center;
     transition: background-color 0.3s ease;
 }
 
 @media (max-width: 600px) {
+    .memory-game {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .cards {
-        width: calc(50% - 20px);
-        height: 100px;
+        width: 100px;
+        height: 150px;
     }
 }
