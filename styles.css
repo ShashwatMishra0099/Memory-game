@@ -21,8 +21,8 @@ body {
 
 .card-inner {
     position: relative;
-    width: 100px;
-    height: 150px;
+    width: 50px;
+    height: 75px;
     transform-style: preserve-3d;
     transition: transform 0.5s;
     cursor: pointer;
