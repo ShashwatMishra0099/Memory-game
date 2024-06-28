@@ -50,3 +50,18 @@ body {
     background-position: center;
     transform: rotateY(180deg);
 }
+
+@keyframes slide-down {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
+.slide-down {
+    animation: slide-down 1s forwards;
+}
