@@ -15,24 +15,38 @@ body {
     margin: auto;
 }
 
-.cards {
-    width: 100px;
-    height: 150px;
-    background-color: #3498db;
-    border-radius: 8px;
-    cursor: pointer;
-    background-size: cover;
-    background-position: center;
-    transition: background-color 0.3s ease;
+.card {
+    perspective: 1000px;
 }
 
-@media (max-width: 600px) {
-    .memory-game {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.card-inner {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
 
-    .cards {
-        width: 100px;
-        height: 150px;
-    }
+.card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.card-front {
+    background-color: #3498db;
+}
+
+.card-back {
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
 }
