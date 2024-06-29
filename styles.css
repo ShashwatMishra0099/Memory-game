@@ -49,13 +49,14 @@ body {
     background-size: cover;
     background-position: center;
     transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-image {
     width: 60px; /* Adjust the width of the image here */
     height: 60px; /* Adjust the height of the image here */
-    margin: auto; /* Center the image */
-    display: block; /* Make sure the image is treated as a block element for centering */
 }
 
 @keyframes slide-down {
