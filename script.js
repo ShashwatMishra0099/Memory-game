@@ -102,7 +102,12 @@ duplicateCardsData.forEach(cardData => {
     
     const cardBack = document.createElement('div');
     cardBack.classList.add('card-back');
-    cardBack.style.backgroundImage = `url(${cardData.imgSrc})`;
+    
+    const cardImage = document.createElement('img');
+    cardImage.src = cardData.imgSrc;
+    cardImage.classList.add('card-image'); // Add a class for the image
+
+    cardBack.appendChild(cardImage);
     
     cardInner.appendChild(cardFront);
     cardInner.appendChild(cardBack);
