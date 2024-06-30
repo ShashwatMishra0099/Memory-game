@@ -58,8 +58,8 @@ body {
 }
 
 .card-image {
-    width: 55px; /* Adjust the width of the image here */
-    height: 60px; /* Adjust the height of the image here */
+    width: 45px; /* Adjust the width of the image here */
+    height: 45px; /* Adjust the height of the image here */
 }
 
 @keyframes slide-down {
