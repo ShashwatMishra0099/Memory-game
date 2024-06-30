@@ -58,6 +58,7 @@ function checkForMatch() {
 
 // Function to disable cards
 function disableCards() {
+    lockBoard = true;
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
