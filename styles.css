@@ -42,13 +42,13 @@ body {
 }
 
 .card-front {
-    background-image: url('8c4a9f98-3401-426b-a2cd-446a5240ac16.png');
+    background-image: url('generate_a_single_image_of_a_card_back_design_for_a_memory_card_game_the-2024-06-30-143221.png');
     background-size: cover;
     background-position: center;
 }
 
 .card-back {
-    background-image: url('generate_a_single_image_of_a_card_back_design_for_a_memory_card_game_the-2024-06-30-143221.png');
+    background-image: url('8c4a9f98-3401-426b-a2cd-446a5240ac16.png');
     background-size: cover;
     background-position: center;
     transform: rotateY(180deg);
