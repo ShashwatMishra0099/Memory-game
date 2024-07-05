@@ -19,9 +19,9 @@ body {
 }
 
 .start-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 400px; /* Adjust the width here */
+    height: 400px; /* Adjust the height here */
+    object-fit: cover; /* Change to contain if you want to fit the entire image without cropping */
 }
 
 .play-button {
@@ -41,6 +41,9 @@ body {
     gap: 10px;
     max-width: 400px;
     margin: auto;
+    background-image: url('create_a_2d_background_with_black_and_golden_gradient_effect-2024-07-01-091550 (1).jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .card {
@@ -70,13 +73,13 @@ body {
 }
 
 .card-front {
-    background-image: url('generate_a_single_image_of_a_card_back_design_for_a_memory_card_game_the-2024-06-30-143221.png');
+    background-image: url('');
     background-size: cover;
     background-position: center;
 }
 
 .card-back {
-    background-image: url('8c4a9f98-3401-426b-a2cd-446a5240ac16.png');
+    background-image: url('');
     background-size: cover;
     background-position: center;
     transform: rotateY(180deg);
