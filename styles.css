@@ -19,9 +19,12 @@ body {
 }
 
 .start-image {
-    width: 400px; /* Adjust the width here */
-    height: 400px; /* Adjust the height here */
-    object-fit: cover; /* Change to contain if you want to fit the entire image without cropping */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .play-button {
@@ -39,7 +42,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    max-width: 400px;
+    max-width: 800px; /* Adjust as necessary */
     margin: auto;
     background-image: url('create_a_2d_background_with_black_and_golden_gradient_effect-2024-07-01-091550 (1).jpg');
     background-size: cover;
@@ -52,8 +55,8 @@ body {
 
 .card-inner {
     position: relative;
-    width: 75px; /* Adjust width here */
-    height: 100px; /* Adjust height here */
+    width: 100px; /* Adjust width here */
+    height: 150px; /* Adjust height here */
     transform-style: preserve-3d;
     transition: transform 0.5s;
     cursor: pointer;
