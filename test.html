@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5 Video Player</title>
+    <title>Stream Selector</title>
     <style>
         body {
             margin: 0;
@@ -14,6 +14,44 @@
             height: 100vh;
             background-color: #000;
         }
+        #popup {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        #popup .content {
+            background-color: #400000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #ff0000;
+            text-align: center;
+            max-width: 90%;
+        }
+        #popup h1 {
+            margin-bottom: 20px;
+            color: #ff0000;
+        }
+        #popup button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #popup button:hover {
+            background-color: #cc0000;
+        }
         video {
             width: 100%;
             max-width: 800px;
@@ -22,10 +60,32 @@
     </style>
 </head>
 <body>
+    <!-- Pop-up for stream selection -->
+    <div id="popup">
+        <div class="content">
+            <h1>Select a Stream</h1>
+            <button onclick="playStream('https://amit.allinonereborn.in/jio-tv/app/stream.php?ck=5f5f68646e65615f5f3d73743d313733363437363437367e6578703d313733363438303037367e61636c3d2f62706b2d74762f416e696d616c5f506c616e65745f48696e64695f4d4f422f46616c6c6261636b2f2a7e686d61633d38646134383036646630643436613861383266646237353739636164626435386565396331633733373639396533396337306361653937303166376164623964&cid=566&id=Animal_Planet_Hindi_MOB-audio_98834_hin=98800-video=863200.m3u8')">Animal Planet Hindi</button>
+            <button onclick="playStream('https://amit.allinonereborn.in/jio-tv/app/stream.php?ck=5f5f68646e65615f5f3d73743d313733363437373434337e6578703d313733363438313034337e61636c3d2f62706b2d74762f486973746f72795f31385f48696e64695f4d4f422f46616c6c6261636b2f2a7e686d61633d35353034313138643137653138663036303961396664376662303634363431373632346631663838353261313937333363623265353765636365623938393631&cid=578&id=History_18_Hindi_MOB-audio_108035_hin=108000-video=2297600.m3u8')">History TV 18 HD Hindi</button>
+        </div>
+    </div>
+
     <!-- HTML5 video player -->
-    <video controls autoplay>
-        <source src="https://amit.allinonereborn.in/jio-tv/app/stream.php?ck=5f5f68646e65615f5f3d73743d313733363437363437367e6578703d313733363438303037367e61636c3d2f62706b2d74762f416e696d616c5f506c616e65745f48696e64695f4d4f422f46616c6c6261636b2f2a7e686d61633d38646134383036646630643436613861383266646237353739636164626435386565396331633733373639396533396337306361653937303166376164623964&cid=566&id=Animal_Planet_Hindi_MOB-audio_98834_hin=98800-video=863200.m3u8" type="application/vnd.apple.mpegurl">
+    <video id="videoPlayer" controls autoplay style="display: none;">
+        <source src="" type="application/vnd.apple.mpegurl">
         Your browser does not support the video tag or HLS streams.
     </video>
+
+    <script>
+        function playStream(link) {
+            // Set the video source
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.querySelector('source').src = link;
+            videoPlayer.load();
+            videoPlayer.style.display = 'block';
+
+            // Hide the pop-up
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
