@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Card Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>JW Player - HLS Stream</title>
+    <!-- Include the JW Player library -->
+    <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        #player {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 16 / 9;
+        }
+    </style>
 </head>
 <body>
-    <div class="start-screen">
-        <img src="gamescreen.png" alt="Game Start" class="start-image">
-        <button class="play-button">PLAY</button>
-    </div>
-    <div class="memory-game">
-        <div class="card" id="card1" data-id="1"></div>
-        <div class="card" id="card2" data-id="2"></div>
-        <div class="card" id="card3" data-id="3"></div>
-        <div class="card" id="card4" data-id="4"></div>
-        <div class="card" id="card5" data-id="1"></div>
-        <div class="card" id="card6" data-id="2"></div>
-        <div class="card" id="card7" data-id="3"></div>
-        <div class="card" id="card8" data-id="4"></div>
-    </div>
-    <script src="script.js"></script>
+    <div id="player"></div>
+
+    <script>
+        // JW Player setup for HLS stream
+        jwplayer("player").setup({
+            file: "https://amit.allinonereborn.in/jio-tv/app/stream.php?ck=5f5f68646e65615f5f3d73743d313733363437363437367e6578703d313733363438303037367e61636c3d2f62706b2d74762f416e696d616c5f506c616e65745f48696e64695f4d4f422f46616c6c6261636b2f2a7e686d61633d38646134383036646630643436613861383266646237353739636164626435386565396331633733373639396533396337306361653937303166376164623964&cid=566&id=Animal_Planet_Hindi_MOB-audio_98834_hin=98800-video=863200.m3u8",
+            autostart: true,
+            width: "100%",
+            aspectratio: "16:9"
+        });
+    </script>
 </body>
-    </html>
+</html>
